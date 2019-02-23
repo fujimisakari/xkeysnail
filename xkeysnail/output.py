@@ -7,7 +7,8 @@ from .key import Action, Combo, Modifier
 __author__ = 'zh'
 
 
-_uinput = UInput()
+_uinput = UInput(events={ecodes.EV_KEY: ecodes.keys.keys(),
+                         ecodes.EV_REL: [k for k in ecodes.REL.keys() if k != 16]})
 
 _pressed_modifier_keys = set()
 
